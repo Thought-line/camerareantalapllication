@@ -53,7 +53,7 @@ src/api.js         REST handlers, demo sessions, validation, permissions
 src/store.js       JSON persistence, availability maths, pricing engine
 src/seed.js        12-item catalogue, 3 users, 2 opening bookings
 public/index.html  app shell
-public/styles.css  dark rental-house theme
+public/styles.css  light studio theme (indigo accent)
 public/app.js      hash-routed SPA: catalogue, detail, cart drawer, rentals, dashboard
 data/db.json       created on first run (git-ignored); delete it to reseed
 ```

@@ -36,7 +36,8 @@ const ICONS = {
   audio: '<rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3.5M8.5 21.5h7"/>',
   support: '<circle cx="12" cy="7" r="3"/><path d="M12 10v7M6 21l6-4 6 4M4 13h4M16 13h4"/>',
 };
-const iconSvg = (name, stroke = 'rgba(255,255,255,0.92)') =>
+// Stroke defaults to currentColor so each artwork picks up its item's accent from CSS.
+const iconSvg = (name, stroke = 'currentColor') =>
   `<svg viewBox="0 0 24 24" fill="none" stroke="${stroke}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${
     ICONS[name] ?? ICONS.camera
   }</svg>`;
@@ -258,7 +259,7 @@ async function renderDrawer() {
       ${store.cart
         .map(
           (i) => `<div class="line-item">
-            <span class="li-art" style="--art:${esc(i.accent ?? '#333')}">${iconSvg(i.icon)}</span>
+            <span class="li-art" style="--art:${esc(i.accent ?? '#4f46e5')}">${iconSvg(i.icon)}</span>
             <span class="li-main"><strong>${esc(i.name)}</strong><span>${money0(i.dailyRate)}/day</span></span>
             <span class="qty">
               <button type="button" data-dec="${esc(i.cameraId)}" aria-label="Fewer">−</button>
